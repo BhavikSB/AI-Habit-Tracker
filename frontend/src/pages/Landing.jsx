@@ -236,8 +236,12 @@ export default function Landing() {
         </div>
       </section>
 
-      <footer className="max-w-6xl mx-auto px-6 py-8 text-center text-xs text-faint border-t divider">
-        Built with MERN · BrainStat: AI Habit Tracker © {new Date().getFullYear()}
+      <footer className="max-w-6xl mx-auto px-6 py-8 flex flex-col sm:flex-row items-center justify-center gap-1 sm:gap-2 text-center text-xs text-faint border-t divider">
+        <span>BrainStat: AI Habit Tracker © {new Date().getFullYear()}</span>
+        <span className="hidden sm:inline">·</span>
+        <span className="flex items-center gap-1">
+          Built with MERN and <span className="text-red-500">❤️</span> by <span className="font-semibold text-brand-500">Bhavik</span>
+        </span>
       </footer>
     </div>
   );
