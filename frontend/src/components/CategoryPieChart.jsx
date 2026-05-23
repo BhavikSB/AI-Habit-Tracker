@@ -57,6 +57,10 @@ export default function CategoryPieChart({ data }) {
                   color: theme === "dark" ? "#ebebf5" : "#13131b",
                   backdropFilter: "blur(12px)",
                 }}
+                // Add itemStyle here to target the text directly
+  itemStyle={{
+    color: theme === "dark" ? "#ebebf5" : "#13131b",
+  }}
               />
               <Legend
                 wrapperStyle={{

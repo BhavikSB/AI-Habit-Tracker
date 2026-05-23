@@ -442,15 +442,15 @@ export default function Insights() {
 
       {/* Charts row 2 */}
       <div className="grid lg:grid-cols-[1fr_1.4fr] gap-5">
-        <div className="card p-5">
+        <div className="card p-5 flex flex-col">
           <div className="text-sm font-medium mb-3">By category</div>
           {!categoryData.length ? (
-            <div className="text-sm text-muted py-10 text-center">
+            <div className="text-sm text-muted py-10 text-center flex-1 flex items-center justify-center">
               No completions yet this week.
             </div>
           ) : (
-            <div style={{ width: "100%", height: 240 }}>
-              <ResponsiveContainer>
+            <div className="flex-1 w-full min-h-[240px]">
+              <ResponsiveContainer width="100%" height="100%">
                 <PieChart>
                   <Pie
                     data={categoryData}
@@ -466,7 +466,10 @@ export default function Insights() {
                       <Cell key={i} fill={PIE_COLORS[i % PIE_COLORS.length]} />
                     ))}
                   </Pie>
-                  <Tooltip contentStyle={tooltipStyle} />
+                  <Tooltip 
+                    contentStyle={tooltipStyle} 
+                    itemStyle={{ color: isDark ? "#ebebf5" : "#13131b" }}
+                  />
                   <Legend
                     wrapperStyle={{ fontSize: 12, color: tick }}
                     iconType="circle"
